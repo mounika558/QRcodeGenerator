@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        .qr-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .qr-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="qr-container">
+        <div class="qr-item">
+            <div id="callQR"></div>
+            <p>Call</p>
+        </div>
+        <div class="qr-item">
+            <div id="smsQR"></div>
+            <p>SMS</p>
+        </div>
+        <div class="qr-item">
+            <div id="emailQR"></div>
+            <p>Email</p>
+        </div>
+        <div class="qr-item">
+            <div id="wifiQR"></div>
+            <p>WiFi</p>
+        </div>
+    </div>
+
+    <script>
+        function generateQR(id, text, darkColor, lightColor) {
+            new QRCode(document.getElementById(id), {
+                text: text,
+                width: 128,
+                height: 128,
+                colorDark: darkColor,  // Foreground Color
+                colorLight: lightColor, // Background Color
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        generateQR("callQR", "TEL:+1234567890", "#ff0000", "#ffffcc"); // Red on Light Yellow
+        generateQR("smsQR", "SMSTO:+1234567890:Hello!", "#0077cc", "#e6f7ff"); // Blue on Light Blue
+        generateQR("emailQR", "MAILTO:example@email.com", "#009933", "#ccffcc"); // Green on Light Green
+        generateQR("wifiQR", "WIFI:T:WPA;S:MyNetwork;P:MyPassword;;", "#9900cc", "#f5e6ff"); // Purple on Light Purple
+
+    </script>
+
+</body>
+</html>

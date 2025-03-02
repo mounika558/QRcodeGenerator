@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="Stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <main>
+        <section class="nav-bar">
+            <div>
+                <h1>QrCode</h1>
+                <nav class="nav-items">
+                    <ul>
+                        <li>Home</li>
+                        <li>About us</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="login">
+                    <button type="login" onclick="login()">LOGIN</button>
+                </div>
+        </section>
+        <div class="titles">
+            <h1>QR Code Generator</h1>
+            <ul>
+                <li><i>Free Instant Download</i></li>
+                <li><i>Easy Customization</i></li>
+                <li><i>Lifetime Availability</i></li>
+            </ul>
+        </div>
+        <div class="url-container">
+            <div class="left-part">
+            <div class="Waystoqrcode">
+                <button class="tab-btn active" onclick="openTab(event, 'web-social')">Web & Social Networks</button>
+                <button class="tab-btn" onclick="openTab(event, 'other-types')">Other Types</button>
+            </div>
+
+            <!-- Web & Social Networks Tab -->
+            <div id="web-social" class="tab-content active">
+                <div class="url-input">
+                    <input type="text" placeholder="Enter your URL" id="Qrtext">
+                    <button type="Submit" onclick="generateQR()">Create QR Code</button>
+                </div>
+            </div>
+        
+            <!-- Other Types Tab -->
+            <div id="other-types" class="tab-content">
+                <div class="ways">
+                    <button id="Call-btn active" class="Call" onclick="switchTab(event,'Call')">
+                    <img src="./assets/icons/call.png"> 
+                    <p>call</p>
+                    </button>
+                    <div class="Call" id="Call">
+                        <input type="text">
+                    </div>
+
+                
+                    <button id="Chat-btn active" class="chat" onclick="switchTab(event,'chat')">
+                    <img src="./assets/icons/chat-bubbles-with-ellipsis.png">
+                    <p>SMS</p>
+                    </button>
+                    <div class="chat" id="chat">
+                        <label>SMS NO:<input type="text"></label>
+                        <label>SMS Content:<input type="text"></label>
+                    </div>
+<!-- **************************************************************-->
+
+                    <button>
+                    <img src="./assets/icons/email.png">
+                    <p>Email</p>
+                    </button>
+                    
+                    <button>
+                    <img src="./assets/icons/location.png">
+                    <p>Location</p>
+                    </button>
+                    
+                    <button>
+                    <img src="./assets/icons/appointment.png">
+                    <p>Event</p>
+                    </button>
+                    
+                    <button>
+                    <img src="./assets/icons/wifi.png">
+                    <p>Wifi</p>
+                    </button>
+                    
+                    <button>
+                    <img src="./assets/icons/font-size.png">
+                    <p>Text</p>
+                    </button>
+                    <button>
+                        <img src="./assets/icons/pdf-file.png">
+                        <p>PDF</p>
+                        </button>
+                    </div>
+            </div>
+        </div>
+            <div class="right-part">
+                <div id="Qrcodeimgbox">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"; id="Qrimg">
+                    <a style="color:rgb(59, 32, 54);font: weight 400px;font-size:20px;" id="qrlink" href=""></a>
+                    <button type="Download">Download</button>
+                </div>
+            </div>
+            <div class="quote">
+                <p>Generate your Qr code here!!!...</p>
+            </div>
+
+</div>
+
+<section>
+    <div class="customization">
+      <div>
+        color
+      </div>
+      <div>
+        styles
+      </div>
+      <div>
+        logo
+      </div>
+      <div>
+        eyes
+      </div>
+      <div>
+        options
+      </div>
+    </div>
+    <div class="various-colors">
+
+    </div>
+</section>
+    </main>
+    <script src="./assets/script.js">
+    
+    </script>
+</body>
+</html>
