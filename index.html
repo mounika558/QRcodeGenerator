@@ -48,95 +48,109 @@
         
             <!-- Other Types Tab -->
             <div id="other-types" class="tab-content">
-                <div class="ways">
-                    <button id="Call-btn active" class="Call" onclick="switchTab(event,'Call')">
-                    <img src="./assets/icons/call.png"> 
-                    <p>call</p>
-                    </button>
-                    <div class="Call" id="Call">
-                        <input type="text">
-                    </div>
+                <div class="ways" id="ways">
+    <!--Phone-->
+    <button class="callbtn" id="callbtn" onclick="callbutton()">
+        <img src="./assets/icons/call.png" id="call">
+        <p>Phone</p>
+    </button> 
 
-                
-                    <button id="Chat-btn active" class="chat" onclick="switchTab(event,'chat')">
-                    <img src="./assets/icons/chat-bubbles-with-ellipsis.png">
-                    <p>SMS</p>
-                    </button>
-                    <div class="chat" id="chat">
-                        <label>SMS NO:<input type="text"></label>
-                        <label>SMS Content:<input type="text"></label>
-                    </div>
-<!-- **************************************************************-->
+    <!--Email-->
+    <button class="emailbtn active" id="emailbtn" onclick="emailbtn()">
+        <img src="./assets/icons/email.png" id="email">
+        <p>Email</p>
+    </button>
 
-                    <button>
-                    <img src="./assets/icons/email.png">
-                    <p>Email</p>
-                    </button>
-                    
-                    <button>
-                    <img src="./assets/icons/location.png">
-                    <p>Location</p>
-                    </button>
-                    
-                    <button>
-                    <img src="./assets/icons/appointment.png">
-                    <p>Event</p>
-                    </button>
-                    
-                    <button>
-                    <img src="./assets/icons/wifi.png">
-                    <p>Wifi</p>
-                    </button>
-                    
-                    <button>
-                    <img src="./assets/icons/font-size.png">
-                    <p>Text</p>
-                    </button>
-                    <button>
-                        <img src="./assets/icons/pdf-file.png">
-                        <p>PDF</p>
-                        </button>
-                    </div>
-            </div>
+    <!--Location--> 
+        <button class="locationbtn active" id="locationbtn" onclick="locbtn()">
+        <img src="./assets/icons/location.png" id="loc">
+        <p>Location</p>
+    </button>
+    
+    <!--sms-->
+    <button class="smsbtn active" id="smsbtn">
+        <img src="./assets/icons/chat-bubbles-with-ellipsis.png" id="sms">
+        <p>Event</p>
+    </button>
+
+    <!--wifi-->
+    <button class="wifibtn active" id="wifibtn">
+        <img src="./assets/icons/wifi.png" id="wifi">
+        <p>Wifi</p>
+    </button>
+
+    <!--text-->
+    <button class="textbtn active" id="textbtn">
+        <img src="./assets/icons/font-size.png" id="text">
+        <p>Text</p>
+    </button>
+
+    <!--pdf-->
+    <button class="pdfbtn active" id="pdfbtn">
+        <img src="./assets/icons/pdf-file.png" id="pdf">
+        <p>Pdf</p>
+    </button>
+
+    <!--event-->
+    <button class="eventbtn active" id="eventbtn">
+        <img src="./assets/icons/appointment.png" id="event">
+        <p>Event</p>
+    </button>
+
+    <!--image-->
+    <button class="imgbtn active" id="imgbtn">
+        <img src="./assets/icons/image.png" id="img-icon">
+        <p>Image</p>
+    </button>
+
+</div>
+    </div>
         </div>
+
             <div class="right-part">
                 <div id="Qrcodeimgbox">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"; id="Qrimg">
-                    <a style="color:rgb(59, 32, 54);font: weight 400px;font-size:20px;" id="qrlink" href=""></a>
+                    <a style="color:blue;text-decoration:none;font: weight 400px;font-size:20px;" id="qrlink" href=""></a>
                     <button type="Download">Download</button>
                 </div>
             </div>
-            <div class="quote">
-                <p>Generate your Qr code here!!!...</p>
-            </div>
-
+</div>
+<!--Phone Url generation-->
+<div class="phonepopupcontainer" id="phonepopupbox">
+    <div class="phonepopup">
+        <p>Send your phone number in qrcode</p>
+        <input type="text" placeholder="enter phone number" id="number">
+        <input type="text" placeholder="enter message" id="msg">
+        <button type="submit" id="generate-btn" onclick="Phone()">GenerateQrcode</button>
+        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
+    </div>
 </div>
 
-<section>
-    <div class="customization">
-      <div>
-        color
-      </div>
-      <div>
-        styles
-      </div>
-      <div>
-        logo
-      </div>
-      <div>
-        eyes
-      </div>
-      <div>
-        options
-      </div>
+<!--Email Url-->
+<div class="emailpopupcontainer" id="emailpopupbox">
+    <div class="emailpopup">
+        <p>Send your email pre-stored in qrcode</p>
+        <input type="Email"id ="emailinput" placeholder="Enter mail address">
+        <input type="text" id="subject" placeholder="Enter Subject">
+        <input type="text" id="content" placeholder="Enter content">
+        <button type="submit" id="generate-btn" onclick="Email()">GenerateQrcode</button>
+        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
     </div>
-    <div class="various-colors">
+</div>
 
+<!--location url-->
+<div class="locpopupcontainer" id="locpopupbox">
+    <div class="locpopup">
+        <p>Send your Location pre-stored in qrcode</p>
+        <input type="text" id="loc-link" placeholder="paste location link">
+        <button type="submit" id="generate-btn" onclick="loc()">GenerateQrcode</button>
+        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
     </div>
-</section>
-    </main>
-    <script src="./assets/script.js">
-    
-    </script>
+</div>
+
+<!---->
+</main>
+<script src="./assets/script.js">
+</script>
 </body>
 </html>
