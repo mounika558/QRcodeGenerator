@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="Stylesheet" href="./assets/style.css">
+    <title>Qrcode generator</title>
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-    <main>
-        <section class="nav-bar">
-            <div>
-                <h1>QrCode</h1>
+    <div class="nav">
+        <h1>QrCode</h1>
                 <nav class="nav-items">
                     <ul>
                         <li>Home</li>
@@ -18,113 +16,84 @@
                         <li>Contact</li>
                     </ul>
                 </nav>
-                </div>
-                <div class="login">
-                    <button type="login" onclick="login()">LOGIN</button>
-                </div>
-        </section>
-        <div class="titles">
-            <h1>QR Code Generator</h1>
-            <ul>
-                <li><i>Free Instant Download</i></li>
-                <li><i>Easy Customization</i></li>
-                <li><i>Lifetime Availability</i></li>
-            </ul>
-        </div>
-        <div class="url-container">
-            <div class="left-part">
-            <div class="Waystoqrcode">
-                <button class="tab-btn active" onclick="openTab(event, 'web-social')">Web & Social Networks</button>
-                <button class="tab-btn" onclick="openTab(event, 'other-types')">Other Types</button>
+    </div>
+
+    <div class="titles">
+        <h2>QR Code Generator</h2>
+        <ul>
+            <li><i>Free Instant Download</i></li>
+            <li><i>Easy Customization</i></li>
+            <li><i>Lifetime Availability</i></li>
+        </ul>
+    </div>
+
+    <main>
+    <div class="container">
+        <div class="qr-container">
+            <div class="ways">
+
+                <button class="callbtn" id="callbtn" onclick="callbutton()">
+                    <img src="./assets/icons/call.png" id="call">
+                    <p>Phone</p>
+                </button> 
+
+                <button class="emailbtn active" id="emailbtn" onclick="emailbtn()">
+                    <img src="./assets/icons/email.png" id="email">
+                    <p>Email</p>
+                </button>
+
+                <button class="locationbtn active" id="locationbtn" onclick="locbtn()">
+                    <img src="./assets/icons/location.png" id="loc">
+                    <p>Location</p>
+                </button>
+
+                <button class="smsbtn active" id="smsbtn" onclick="smsbtn()">
+                    <img src="./assets/icons/chat-bubbles-with-ellipsis.png" id="sms">
+                    <p>SMS</p>
+                </button>
+
+                <button class="wifibtn active" id="wifibtn">
+                    <img src="./assets/icons/wifi.png" id="wifi">
+                    <p>Wifi</p>
+                </button>
+
+                <button class="textbtn active" id="textbtn" onclick="textbtn()">
+                    <img src="./assets/icons/font-size.png" id="text">
+                    <p>Text</p>
+                </button>
+
+                <button class="pdfbtn active" id="pdfbtn">
+                    <img src="./assets/icons/pdf-file.png" id="pdf">
+                    <p>Pdf</p>
+                </button>
+
+
+                <button class="eventbtn active" id="eventbtn">
+                    <img src="./assets/icons/appointment.png" id="event">
+                    <p>Event</p>
+                </button>
+
+                <button class="imgbtn active" id="imgbtn">
+                    <img src="./assets/icons/image.png" id="img-icon">
+                    <p>Image</p>
+                </button>
             </div>
 
-            <!-- Web & Social Networks Tab -->
-            <div id="web-social" class="tab-content active">
-                <div class="url-input">
+                <div class="url-input" id="url-input">
                     <input type="text" placeholder="Enter your URL" id="Qrtext">
-                    <button type="Submit" onclick="generateQR()">Create QR Code</button>
+                    <button id="create-btn"type="Submit" onclick="generateQR()">Create QR Code</button>
                 </div>
-            </div>
-        
-            <!-- Other Types Tab -->
-            <div id="other-types" class="tab-content">
-                <div class="ways" id="ways">
-    <!--Phone-->
-    <button class="callbtn" id="callbtn" onclick="callbutton()">
-        <img src="./assets/icons/call.png" id="call">
-        <p>Phone</p>
-    </button> 
 
-    <!--Email-->
-    <button class="emailbtn active" id="emailbtn" onclick="emailbtn()">
-        <img src="./assets/icons/email.png" id="email">
-        <p>Email</p>
-    </button>
-
-    <!--Location--> 
-        <button class="locationbtn active" id="locationbtn" onclick="locbtn()">
-        <img src="./assets/icons/location.png" id="loc">
-        <p>Location</p>
-    </button>
-    
-    <!--sms-->
-    <button class="smsbtn active" id="smsbtn">
-        <img src="./assets/icons/chat-bubbles-with-ellipsis.png" id="sms">
-        <p>Event</p>
-    </button>
-
-    <!--wifi-->
-    <button class="wifibtn active" id="wifibtn">
-        <img src="./assets/icons/wifi.png" id="wifi">
-        <p>Wifi</p>
-    </button>
-
-    <!--text-->
-    <button class="textbtn active" id="textbtn">
-        <img src="./assets/icons/font-size.png" id="text">
-        <p>Text</p>
-    </button>
-
-    <!--pdf-->
-    <button class="pdfbtn active" id="pdfbtn">
-        <img src="./assets/icons/pdf-file.png" id="pdf">
-        <p>Pdf</p>
-    </button>
-
-    <!--event-->
-    <button class="eventbtn active" id="eventbtn">
-        <img src="./assets/icons/appointment.png" id="event">
-        <p>Event</p>
-    </button>
-
-    <!--image-->
-    <button class="imgbtn active" id="imgbtn">
-        <img src="./assets/icons/image.png" id="img-icon">
-        <p>Image</p>
-    </button>
-
-</div>
-    </div>
-        </div>
-
-            <div class="right-part">
-                <div id="Qrcodeimgbox">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"; id="Qrimg">
-                    <a style="color:blue;text-decoration:none;font: weight 400px;font-size:20px;" id="qrlink" href=""></a>
-                    <button type="Download">Download</button>
-                </div>
-            </div>
-</div>
 <!--Phone Url generation-->
-<div class="phonepopupcontainer" id="phonepopupbox">
-    <div class="phonepopup">
-        <p>Send your phone number in qrcode</p>
-        <input type="text" placeholder="enter phone number" id="number">
-        <input type="text" placeholder="enter message" id="msg">
-        <button type="submit" id="generate-btn" onclick="Phone()">GenerateQrcode</button>
-        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
-    </div>
-</div>
+                <div class="phonepopupcontainer" id="phonepopupbox">
+                    <div class="phonepopup">
+                        <p>Send your phone number in qrcode</p>
+                        <input type="text" placeholder="enter phone number" id="number">
+                        <input type="text" placeholder="enter message" id="msg">
+                        <button type="submit" id="generate-btn" onclick="Phone()">GenerateQrcode</button>
+                        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
+                    </div>
+                </div>
 
 <!--Email Url-->
 <div class="emailpopupcontainer" id="emailpopupbox">
@@ -148,9 +117,40 @@
     </div>
 </div>
 
-<!---->
+<!--SMS-->
+<div class="smspopupcontainer" id="smspopupbox">
+    <div class="smspopup" id="smspopup">
+        <p>Send your Message pre-stored in qrcode</p>
+        <input type="text" id="phnumber" placeholder="Enter Mobile number">
+        <input type="text" id="sms-content" placeholder="Enter your message">
+        <button type="submit" id="generate-btn" onclick="sms()">GenerateQrcode</button>
+        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
+    </div>
+</div>
+
+<!--Text-->
+<div class="textpopupcontainer" id="textpopupbox">
+    <div class="textpopup" id="textpopup">
+        <p>Send your Message pre-stored in qrcode</p>
+        <input type="text" id="yourtext" placeholder="Enter your text message">
+        <button type="submit" id="generate-btn" onclick="text()">GenerateQrcode</button>
+        <button type="close" onclick="closepopup(this)" id="close-btn">close</button>
+    </div>
+    </div>
+    </div>
+
+        <div class="qrcode" id="qrcode">
+                    <h3>Download QR-Code</h3>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"; id="Qrimg">
+                    <a style="color:blue;text-decoration:none;font: weight 400px;font-size:20px;" id="qrlink" href=""></a>
+                    <button type="Download">Download</button>
+        </div>
+        <div class="colorpalette">
+
+        </div>
+</div>
 </main>
-<script src="./assets/script.js">
-</script>
+
+<script src="./assets/scripts.js"></script>
 </body>
 </html>
